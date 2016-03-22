@@ -56,6 +56,11 @@ def result(message):
     for option, res in zip(polloptions, pollres):
         message.send(option + ': ' + str(res))
 
+@listen_to('!source')
+@respond_to('!source')
+def result(message):
+    message.send('https://github.com/Horgix/elsa ; et OUI c\'est sale. Très.')
+
 @listen_to('!battletag (.*)', re.IGNORECASE)
 def battletag(message, nick):
     tags = {
