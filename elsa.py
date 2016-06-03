@@ -39,7 +39,7 @@ def startpoll(message, question, options):
     pollquestion = question
 
 @listen_to('!vote ([0-9]+)', re.IGNORECASE)
-@respond_to('!vote ([0-9]+)', re.IGNORECASE)
+#@respond_to('!vote ([0-9]+)', re.IGNORECASE)
 def poll(message, vote):
     global pollquestion
     global polloptions
@@ -120,6 +120,43 @@ def kehou(message):
             u"♫ Coucou kehou, coucou kehou...",
             u"Kehou, le bordelais ?",
             u"Quoi, qu'est ce qu'il a cassé encore ?"
+            ]
+    message.send(random.choice(replies))
+
+@listen_to('jarou !', re.IGNORECASE)
+@respond_to('jarou !', re.IGNORECASE)
+def jarou(message):
+    replies = [
+            u"Jarou, l'intermittent ?",
+            u"Jarou, le roi du bricolage !",
+            ]
+    message.send(random.choice(replies))
+
+@listen_to('loic !', re.IGNORECASE)
+@respond_to('loic !', re.IGNORECASE)
+def loic(message):
+    replies = [
+            u"Loic raison !"
+            ]
+    message.send(random.choice(replies))
+
+@listen_to('joraf !', re.IGNORECASE)
+@respond_to('joraf !', re.IGNORECASE)
+def loic(message):
+    replies = [
+            u"Drakaaaaaaaar !",
+            u"Joraf la joraxe !",
+            u"Joraf ? Il est toujours sur une autre planète; Evry qu'elle s'appelle",
+            u"Vodka !"
+            ]
+    message.send(random.choice(replies))
+
+@listen_to('alelb !', re.IGNORECASE)
+@respond_to('alelb !', re.IGNORECASE)
+def loic(message):
+    replies = [
+            u"Alelb, le ninja ?",
+            u"Heyyy Marriiiiio"
             ]
     message.send(random.choice(replies))
 
