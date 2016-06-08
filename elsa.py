@@ -199,5 +199,23 @@ def github(message):
     print(attachments)
     message.send_webapi('', attachments)
 
+@listen_to('!cgtgate')
+@respond_to('!cgtgate')
+def cgtgate(message):
+    excuses = [
+        "de la loi travail",
+        "de Léo",
+        "du gouvernement",
+        "des pluies de grenouilles",
+        "du réchauffement climatique",
+        "de la panne de la machine à café",
+        "des devs",
+        "du manager",
+        "des outils",
+        "du kernel (méchant @joraf)",
+        "du suffrage universel direct",
+    ]
+    message.send("C'est la faute %s !" % random.choice(excuses))
+
 if __name__ == "__main__":
     main()
