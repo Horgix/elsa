@@ -61,6 +61,11 @@ def result(message):
 def result(message):
     message.send('https://github.com/Horgix/elsa ; et OUI c\'est sale. Très.')
 
+@listen_to('!400')
+@respond_to('!400')
+def badr_request(message):
+    message.send('400 Badr Request')
+
 @listen_to('!battletag (.*)', re.IGNORECASE)
 def battletag(message, nick):
     tags = {
