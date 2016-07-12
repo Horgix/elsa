@@ -61,6 +61,11 @@ def result(message):
 def source(message):
     message.send('https://github.com/Horgix/elsa ; et OUI c\'est sale. Très.')
 
+@listen_to('!how')
+@respond_to('!how')
+def how(message):
+    message.send('How do I run ? Well... I **might** be running inside a tmux, directly called from the CLI. But that would be ugly, wouldn\'t it ? Eh.')
+
 @listen_to('!400')
 @respond_to('!400')
 def badr_request(message):
