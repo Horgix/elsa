@@ -40,7 +40,7 @@ def startpoll(message, question, options):
 
 @listen_to('!vote ([0-9]+)', re.IGNORECASE)
 #@respond_to('!vote ([0-9]+)', re.IGNORECASE)
-def poll(message, vote):
+def vote(message, vote):
     global pollquestion
     global polloptions
     global pollres
@@ -58,7 +58,7 @@ def result(message):
 
 @listen_to('!source')
 @respond_to('!source')
-def result(message):
+def source(message):
     message.send('https://github.com/Horgix/elsa ; et OUI c\'est sale. Très.')
 
 @listen_to('!400')
@@ -100,7 +100,7 @@ def battletagpriv(message, nick):
 
 @listen_to('critical')
 @respond_to('critical')
-def github(message):
+def critical(message):
     attachments = [
     {
         'fallback': 'LHG is burning !',
@@ -148,7 +148,7 @@ def loic(message):
 
 @listen_to('joraf !', re.IGNORECASE)
 @respond_to('joraf !', re.IGNORECASE)
-def loic(message):
+def joraf(message):
     replies = [
             u"Drakaaaaaaaar !",
             u"Joraf la joraxe !",
@@ -159,7 +159,7 @@ def loic(message):
 
 @listen_to('alelb !', re.IGNORECASE)
 @respond_to('alelb !', re.IGNORECASE)
-def loic(message):
+def alelb(message):
     replies = [
             u"Alelb, le ninja ?",
             u"Heyyy Marriiiiio"
@@ -179,7 +179,7 @@ def loic(message):
 
 @listen_to('segir !', re.IGNORECASE)
 @respond_to('segir !', re.IGNORECASE)
-def kehou(message):
+def segir(message):
     replies = [
             u"Segir, l'ivoirien ?",
             ]
@@ -194,7 +194,7 @@ def debug(message, content):
 
 @listen_to('warning')
 @respond_to('warning')
-def github(message):
+def warning(message):
     attachments = [
     {
         'fallback': 'Risel fait des origamis',
