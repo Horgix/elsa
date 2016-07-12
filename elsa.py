@@ -66,6 +66,11 @@ def source(message):
 def badr_request(message):
     message.send('400 Badr Request')
 
+@listen_to('!502')
+@respond_to('!502')
+def badr_gateway(message):
+    message.send('502 Badr Gateway')
+
 @listen_to('!battletag (.*)', re.IGNORECASE)
 def battletag(message, nick):
     tags = {
