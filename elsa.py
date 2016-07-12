@@ -66,6 +66,16 @@ def source(message):
 def how(message):
     message.send('How do I run ? Well... I **might** be running inside a tmux, directly called from the CLI. But that would be ugly, wouldn\'t it ? Eh.')
 
+@listen_to('!why')
+@respond_to('!why')
+def why(message):
+    message.send('Because jubon. Oh, and Olaf !')
+
+@listen_to('!when')
+@respond_to('!when')
+def why(message):
+    message.send('Really ? Maybe you should stop here, no ? :)')
+
 @listen_to('!400')
 @respond_to('!400')
 def badr_request(message):
