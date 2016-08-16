@@ -14,7 +14,6 @@ def main():
 
 answersmap = {'tais toi elsa': 'wtf ?',
             'coucou elsa': 'wesh',
-            'ansible': 'Salt > Ansible',
             'Hi elsa': 'Hi'}
 
 pollquestion = None
@@ -204,6 +203,13 @@ def segir(message):
             u"Segir, l'ivoirien ?",
             ]
     message.send(random.choice(replies))
+
+@listen_to('ansible', re.IGNORECASE)
+@respond_to('ansible', re.IGNORECASE)
+def ansible(message):
+    r = random.randint(1, 3)
+    if r == 1:
+        message.send('Salt > Ansible')
 
 @listen_to('(.*)')
 @respond_to('(.*)')
