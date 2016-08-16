@@ -101,6 +101,11 @@ def battletag(message, nick):
                 "You can still get the list of which battletags I can handle "
                 "using !battletag list in private")
 
+@listen_to('weee', re.IGNORECASE)
+@respond_to('weee', re.IGNORECASE)
+def weeee(message):
+    message.send("https://www.youtube.com/watch?v=wiMGFoOT3aQ")
+
 @respond_to('!battletag (.*)', re.IGNORECASE)
 def battletagpriv(message, nick):
     tags = {
