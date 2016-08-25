@@ -190,6 +190,15 @@ def alelb(message):
             ]
     message.send(random.choice(replies))
 
+@listen_to('alcho !', re.IGNORECASE)
+@respond_to('alcho !', re.IGNORECASE)
+def alcho(message):
+    replies = [
+            u"Alcho, le mangeur de poussins ?",
+            u"Créateur ! Gloire à vous !"
+            ]
+    message.send(random.choice(replies))
+
 #@listen_to('!whois ([a-b]+)', re.IGNORECASE)
 #@respond_to('!whois ([a-b]+)', re.IGNORECASE)
 #def kehou(message, nick):
