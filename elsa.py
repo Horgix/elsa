@@ -92,7 +92,8 @@ def battletag(message, nick):
             'joraf':    'Nekonyaa#2495',
             'jubon':    'Ryf7#2504',
             'kehou':    'Qwazerty#2418',
-            'lefer':    'Ahuri3#2473'
+            'lefer':    'Ahuri3#2473',
+            'lulog':    'Krast#2725'
             }
     if nick in tags:
         message.send(tags[nick])
@@ -112,7 +113,9 @@ def battletagpriv(message, nick):
             'horgix':   'Horgix#2738',
             'joraf':    'Nekonyaa#2495',
             'jubon':    'Ryf7#2504',
-            'kehou':    'Qwazerty#2418'
+            'kehou':    'Qwazerty#2418',
+            'lefer':    'Ahuri3#2473',
+            'lulog':    'Krast#2725'
             }
     if nick in tags:
         message.send(tags[nick])
