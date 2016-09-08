@@ -107,6 +107,11 @@ def battletag(message, nick):
 def weeee(message):
     message.send("https://www.youtube.com/watch?v=wiMGFoOT3aQ")
 
+@listen_to('nuke', re.IGNORECASE)
+@respond_to('nuke', re.IGNORECASE)
+def weeee(message):
+    message.send("https://a-team-survivors.slack.com/files/joraf/F29JQHSS3/nope_nuke.gif")
+
 @respond_to('!battletag (.*)', re.IGNORECASE)
 def battletagpriv(message, nick):
     tags = {
