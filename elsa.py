@@ -146,7 +146,8 @@ def critical(message):
 @respond_to('lulog !', re.IGNORECASE)
 def lulog(message):
     replies = [
-            u"Lulog, l'alternant ?"
+            u"Lulog, l'alternant ?",
+            u"Quoi les logs ?"
             ]
     message.send(random.choice(replies))
 
@@ -175,6 +176,34 @@ def jarou(message):
 def loic(message):
     replies = [
             u"Loic raison !"
+            ]
+    message.send(random.choice(replies))
+
+@listen_to('ermar !', re.IGNORECASE)
+@respond_to('ermar !', re.IGNORECASE)
+def ermar(message):
+    replies = [
+            u"Ermar le canard ! coin \_o< \_o< \__O<",
+            u"Eric le porc-épic !",
+            u"Eric le nasique !",
+            u"Non, c'est Supermar !"
+            ]
+    message.send(random.choice(replies))
+
+@listen_to('léo !', re.IGNORECASE)
+@respond_to('léo !', re.IGNORECASE)
+def leo(message):
+    replies = [
+            u"Le ROI léo !"
+            ]
+    message.send(random.choice(replies))
+
+@listen_to('lefer !', re.IGNORECASE)
+@respond_to('lefer !', re.IGNORECASE)
+def lefer(message):
+    replies = [
+            u"La barre lefer, elle peut tout faire !",
+            u"Il faut battre lefer quand il est chaud."
             ]
     message.send(random.choice(replies))
 
@@ -207,6 +236,16 @@ def alcho(message):
             ]
     message.send(random.choice(replies))
 
+@listen_to('popi !', re.IGNORECASE)
+@respond_to('popi !', re.IGNORECASE)
+def popi(message):
+    replies = [
+            u"Chocobisous !",
+            u"Popi popi, popi pou, popi popi, popi pou...♫",
+            u"Je sais bien que tu l'adores (Popineau, Popineau) et qu'elle a de jolis yeux (Popineau, Popineau)...♫"
+            ]
+    message.send(random.choice(replies))
+
 #@listen_to('!whois ([a-b]+)', re.IGNORECASE)
 #@respond_to('!whois ([a-b]+)', re.IGNORECASE)
 #def kehou(message, nick):
@@ -223,6 +262,14 @@ def alcho(message):
 def segir(message):
     replies = [
             u"Segir, l'ivoirien ?",
+            ]
+    message.send(random.choice(replies))
+
+@listen_to('seb !', re.IGNORECASE)
+@respond_to('seb !', re.IGNORECASE)
+def seb(message):
+    replies = [
+            u"Seb c'est bien.",
             ]
     message.send(random.choice(replies))
 
@@ -259,6 +306,8 @@ def cgtgate(message):
         "de la loi travail",
         "de Léo",
         "du gouvernement",
+        "de puppet",
+        "de gescom",
         "des pluies de grenouilles",
         "du réchauffement climatique",
         "de la panne de la machine à café",
