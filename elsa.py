@@ -112,6 +112,11 @@ def weeee(message):
 def weeee(message):
     message.send("https://a-team-survivors.slack.com/files/joraf/F29JQHSS3/nope_nuke.gif")
 
+@listen_to('topkek', re.IGNORECASE)
+@respond_to('topkek', re.IGNORECASE)
+def topkek(message):
+    message.send("https://a-team-survivors.slack.com/files/joraf/F2C2BNBDG/pasted_image_at_2016_09_15_15_39.png")
+
 @respond_to('!battletag (.*)', re.IGNORECASE)
 def battletagpriv(message, nick):
     tags = {
