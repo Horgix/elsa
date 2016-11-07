@@ -267,6 +267,7 @@ def popi(message):
 def segir(message):
     replies = [
             u"Segir, l'ivoirien ?",
+            u"Couscous !",
             ]
     message.send(random.choice(replies))
 
