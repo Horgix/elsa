@@ -195,10 +195,16 @@ def ermar(message):
             ]
     message.send(random.choice(replies))
 
-@listen_to('léo !', re.IGNORECASE)
-@respond_to('léo !', re.IGNORECASE)
+@listen_to('l[ée]o !', re.IGNORECASE)
+@respond_to('l[ée]o !', re.IGNORECASE)
 def leo(message):
     replies = [
+            u"Léo glassfish !",
+            u"Léo mailfish !",
+            u"Léo goldfish !",
+            u"Léo scalefish !",
+            u"Léo cloudfish !",
+            u"Léo whiskfish !",
             u"Le ROI léo !"
             ]
     message.send(random.choice(replies))
