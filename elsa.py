@@ -195,8 +195,8 @@ def ermar(message):
             ]
     message.send(random.choice(replies))
 
-@listen_to('l[ée]o !', re.IGNORECASE)
-@respond_to('l[ée]o !', re.IGNORECASE)
+@listen_to(u'l[ée]o !', re.IGNORECASE)
+@respond_to(u'l[ée]o !', re.IGNORECASE)
 def leo(message):
     replies = [
             u"Léo glassfish !",
