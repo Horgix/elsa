@@ -23,6 +23,8 @@ pollquestion = None
 polloptions = []
 pollres = []
 
+leofile = "leo.fish_non_pas_le_shell"
+
 @listen_to('!startpoll "(.*)" (.*)', re.IGNORECASE)
 @respond_to('!startpoll "(.*)" (.*)', re.IGNORECASE)
 def startpoll(message, question, options):
@@ -201,19 +203,27 @@ def ermar(message):
 @listen_to(u'l[ée]o !', re.IGNORECASE)
 @respond_to(u'l[ée]o !', re.IGNORECASE)
 def leo(message):
-    with open('leo.csv', 'r') as f:
-        replies = [e.rstrip() for e in f.readlines()]
-        message.send(u"Léo " + random.choice(replies) + " !")
+    try:
+        with open(leofile, 'r') as f:
+            replies = [e.rstrip() for e in f.readlines()]
+            message.send(u"Léo " + random.choice(replies) + " !")
+    except FileNotFoundError as e:
+        message.send(u"Booouuh, " + leofile + " existe pas, nul!")
 
 @listen_to(u'l[ée]o (.*) !', re.IGNORECASE)
 @respond_to(u'l[ée]o (.*) !', re.IGNORECASE)
 def leoarning(message, learn):
-    with open('leo.csv', 'r') as f:
-        lines = [e.rstrip() for e in f.readlines()]
+    try:
+        with open(leofile, 'r') as f:
+            lines = [e.rstrip() for e in f.readlines()]
+    except FileNotFoundError as e:
+        message.send(u"Bouuh, " + leofile + " existe pas, qui a codé ça? Allez, je le crée, je suis gentille...")
+        lines = []
+        pass
     if (learn not in lines):
-        with open('leo.csv', 'a') as f:
+        with open(leofile, 'w+') as f:
             f.write(learn + '\n')
-            message.send(u"Léo " + learn + " !")
+            message.send(u"Merci, j'aime apprendre de nouveaux Léos :slightly_smiling_face:")
 
 @listen_to('lefer !', re.IGNORECASE)
 @respond_to('lefer !', re.IGNORECASE)
