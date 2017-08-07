@@ -5,6 +5,7 @@
 from slackbot.bot import Bot
 from slackbot.bot import respond_to
 from slackbot.bot import listen_to
+import os
 import random
 import re
 import json
@@ -200,16 +201,19 @@ def ermar(message):
 @listen_to(u'l[ée]o !', re.IGNORECASE)
 @respond_to(u'l[ée]o !', re.IGNORECASE)
 def leo(message):
-    replies = [
-            u"Léo glassfish !",
-            u"Léo mailfish !",
-            u"Léo goldfish !",
-            u"Léo scalefish !",
-            u"Léo cloudfish !",
-            u"Léo whiskfish !",
-            u"Le ROI léo !"
-            ]
-    message.send(random.choice(replies))
+    with open('leo.csv', 'r') as f:
+        replies = [e.rstrip() for e in f.readlines()]
+        message.send(u"Léo " + random.choice(replies) + " !")
+
+@listen_to(u'l[ée]o (.*) !', re.IGNORECASE)
+@respond_to(u'l[ée]o (.*) !', re.IGNORECASE)
+def leoarning(message, learn):
+    with open('leo.csv', 'r') as f:
+        lines = [e.rstrip() for e in f.readlines()]
+    if (learn not in lines):
+        with open('leo.csv', 'a') as f:
+            f.write(learn + '\n')
+            message.send(u"Léo " + learn + " !")
 
 @listen_to('lefer !', re.IGNORECASE)
 @respond_to('lefer !', re.IGNORECASE)
