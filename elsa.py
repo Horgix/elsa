@@ -221,7 +221,7 @@ def leoarning(message, learn):
         lines = []
         pass
     if (learn not in lines):
-        with open(leofile, 'w+') as f:
+        with open(leofile, 'a+') as f:
             f.write(learn + '\n')
             message.send(u"Merci, j'aime apprendre de nouveaux Léos :slightly_smiling_face:")
 
