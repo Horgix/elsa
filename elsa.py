@@ -200,6 +200,25 @@ def ermar(message):
             ]
     message.send(random.choice(replies))
 
+@listen_to('ermar quote !', re.IGNORECASE)
+@respond_to('ermar quote !', re.IGNORECASE)
+def ermar_quote(message):
+    replies = [
+            u"Le brut par rapport au net ça n'a rien à voir.",
+            u"C'est moche, mais c'est trop beau.",
+            u"Dans ma chambre, j'ai un poster des 2be3.",
+            u"Moi j'écoute des vrais groupes, les WhatFor.",
+            u"Si Java bien c'est Javabean !",
+            u"C'est l'histoire d'un sysadmin, et PATH le chemin !",
+            u"C'est l'histoire d'une requête SQL qui entre dans un bar, et le barman lui dit : 'ya plus de tables !'",
+            u"C'est l'histoire d'une requête SQL qui entre dans un bar, elle se met entre deux tables et dit : 'May I JOIN you ?'",
+            u"Ecoute, moi j'aime l'amour.",
+            u"Vaut mieux tar que gz !",
+            u"Tu connais le pays des N majuscules ? 'Le Gros N' land ?",
+            u"Moi je m'intéresse beaucoup à la science."
+            ]
+    message.send(random.choice(replies))
+
 @listen_to(u'l[ée]o !', re.IGNORECASE)
 @respond_to(u'l[ée]o !', re.IGNORECASE)
 def leo(message):
