@@ -229,8 +229,8 @@ def leo(message):
     except FileNotFoundError as e:
         message.send(u"Booouuh, " + leofile + " existe pas, nul!")
 
-@listen_to(u'l[ée]o (.*) !', re.IGNORECASE)
-@respond_to(u'l[ée]o (.*) !', re.IGNORECASE)
+@listen_to(u'l[ée]o (.*)fish !', re.IGNORECASE)
+@respond_to(u'l[ée]o (.*)fish !', re.IGNORECASE)
 def leoarning(message, learn):
     try:
         with open(leofile, 'r') as f:
