@@ -244,6 +244,17 @@ def leoarning(message, learn):
             f.write(learn + '\n')
             message.send(u"Merci, j'aime apprendre de nouveaux Léos :slightly_smiling_face:")
 
+@listen_to(u'léostatsfish !', re.IGNORECASE)
+@respond_to(u'léostatsfish !', re.IGNORECASE)
+def lefer(message):
+    try:
+        with open(leofile, 'r') as f:
+            total = len(f.readlines())
+    except FileNotFoundError as e:
+        message.send(u"Bouuh, " + leofile + " existe pas, qui a codé ça?")
+        return
+    message.send("J'ai " + str(total) " léo fisheries \o/")
+
 @listen_to('lefer !', re.IGNORECASE)
 @respond_to('lefer !', re.IGNORECASE)
 def lefer(message):
